@@ -20,3 +20,8 @@ inputs:
     description: Maximum number of retires when using the Octokit REST API
     required: false
     default: 15
+    
+ 
+ runs:
+  using: node12
+  main: dist/index.js
