@@ -19,13 +19,13 @@ jobs:
     
     steps:
       - name: Checkout Action
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
         with:
           ref: ${{ github.event.inputs.action_branch }}
         
       - name: Analyze organization
         id: analyze_org
-        uses: ./
+        uses: ./action-Analyze-Org
         with:
           token: ${{ secrets.OCTODEMO_TEMP_TOKEN }}
           organization: ${{ github.event.inputs.organization }}
@@ -50,11 +50,11 @@ jobs:
     
     steps:
       - name: Checkout Action
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
         with:
           ref: ${{ github.event.inputs.action_branch }}
       - name: Send mail
-        uses: ./
+        uses: ./action-Send-Email
         with:
           # Required mail server address:
           server_address: smtp.gmail.com
