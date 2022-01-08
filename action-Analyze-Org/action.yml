@@ -1,0 +1,22 @@
+name: List of Non standard Profiles and Send mail to Non standard users
+description: A summary non-standard profile for an organization
+
+inputs:
+  token:
+    description: GitHub Access Token.
+    required: false
+
+  outputDir:
+    description: The output directory for the report.
+    required: false
+    default: ${{ github.workspace }}
+
+  organization:
+    description: The organization name.
+    required: false
+
+  
+  octokit_max_retries:
+    description: Maximum number of retires when using the Octokit REST API
+    required: false
+    default: 15
